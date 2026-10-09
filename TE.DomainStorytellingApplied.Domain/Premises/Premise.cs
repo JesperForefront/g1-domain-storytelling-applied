@@ -1,3 +1,5 @@
+using TE.DomainStorytellingApplied.Domain.Common;
+
 namespace TE.DomainStorytellingApplied.Domain.Premises;
 
 public class Premise
@@ -7,10 +9,7 @@ public class Premise
 
     public Premise(string name)
     {
-        if (string.IsNullOrWhiteSpace(name))
-        {
-            throw new ArgumentException("A premise must have a name.", nameof(name));
-        }
+        Guard.EnsureNotEmpty(name);
 
         Id = Guid.NewGuid();
         Name = name;

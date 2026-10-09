@@ -1,3 +1,5 @@
+using TE.DomainStorytellingApplied.Domain.Common;
+
 namespace TE.DomainStorytellingApplied.Domain.Bookers;
 
 public class Booker
@@ -11,10 +13,10 @@ public class Booker
 
     public Booker(string firstName, string lastName, string phoneNumber, string email, IBookerType type)
     {
-        EnsureNotEmpty(firstName, nameof(firstName));
-        EnsureNotEmpty(lastName, nameof(lastName));
-        EnsureNotEmpty(phoneNumber, nameof(phoneNumber));
-        EnsureNotEmpty(email, nameof(email));
+        Guard.EnsureNotEmpty(firstName);
+        Guard.EnsureNotEmpty(lastName);
+        Guard.EnsureNotEmpty(phoneNumber);
+        Guard.EnsureNotEmpty(email);
         ArgumentNullException.ThrowIfNull(type);
 
         Id = Guid.NewGuid();
@@ -23,13 +25,5 @@ public class Booker
         PhoneNumber = phoneNumber;
         Email = email;
         Type = type;
-    }
-
-    private static void EnsureNotEmpty(string value, string paramName)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            throw new ArgumentException($"{paramName} cannot be empty.", paramName);
-        }
     }
 }

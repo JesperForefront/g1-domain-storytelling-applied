@@ -1,3 +1,5 @@
+using TE.DomainStorytellingApplied.Domain.Common;
+
 namespace TE.DomainStorytellingApplied.Domain.Bookers;
 
 public sealed class AssociationRepresentative : IBookerType
@@ -6,10 +8,7 @@ public sealed class AssociationRepresentative : IBookerType
 
     public AssociationRepresentative(string organizationName)
     {
-        if (string.IsNullOrWhiteSpace(organizationName))
-        {
-            throw new ArgumentException("An association representative must represent an organization.", nameof(organizationName));
-        }
+        Guard.EnsureNotEmpty(organizationName);
 
         OrganizationName = organizationName;
     }
