@@ -48,14 +48,18 @@ TE.DomainStorytellingApplied.Domain.Tests/
 - `AssociationRepresentative` utan organisationsnamn → fel
 - Två bookers får olika `Id`
 
-## Steg 4 – Reservation (skapande)
+## Steg 4 – Reservation (skapande) ✅
 **Mål:** Systemet skapar en reservation när en Booker reserverar en Timeslot.
-- `Id`, `BookerId`, `TimeslotId`, `Status`
+- `Id`, `Booker`, `Timeslot`, `Premise`, `Status` (`Pending`/`Approved`)
 - Ny reservation får status `Pending`
+- Timesloten måste tillhöra den angivna lokalen
 
 **Tester:**
 - Ny reservation har status `Pending`
-- Reservation refererar rätt Booker och Timeslot
+- Reservation refererar rätt Booker, Timeslot och Premise
+- Två reservationer får olika `Id`
+- `null` för Booker/Timeslot/Premise → fel
+- Timeslot för annan lokal → fel
 
 ## Steg 5 – Reservation (statusövergångar)
 **Mål:** Reservationen kan godkännas eller avslås, men bara från rätt status.
