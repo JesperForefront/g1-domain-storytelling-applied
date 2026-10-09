@@ -25,14 +25,15 @@ TE.DomainStorytellingApplied.Domain.Tests/
 - Sluttid lika med starttid → fel
 - Giltigt intervall → skapas korrekt
 
-## Steg 2 – Premises
-**Mål:** Lokalen som kan bokas.
+## Steg 2 – Premises ✅
+**Mål:** Lokalen som kan bokas (klass `Premise`).
 - `Id`, `Name`
 - Namn får inte vara tomt
 
 **Tester:**
-- Tomt/null-namn → fel
+- Tomt/null/blanksteg-namn → fel
 - Giltig lokal → skapas korrekt
+- Två lokaler får olika `Id`
 
 ## Steg 3 – Booker
 **Mål:** Den som bokar.
