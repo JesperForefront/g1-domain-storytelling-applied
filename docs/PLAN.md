@@ -35,13 +35,18 @@ TE.DomainStorytellingApplied.Domain.Tests/
 - Giltig lokal → skapas korrekt
 - Två lokaler får olika `Id`
 
-## Steg 3 – Booker
+## Steg 3 – Booker ✅
 **Mål:** Den som bokar.
-- `Id`, `Name`, `BookerType` (`MunicipalityEmployee`, `AssociationRepresentative`, `PrivateIndividual`)
+- `Id`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `Type`
+- `Type` injiceras som `IBookerType`: `MunicipalityEmployee`, `PrivateIndividual`, `AssociationRepresentative` (med `OrganizationName`)
+- Inga textfält får vara tomma/null
 
 **Tester:**
-- Tomt namn → fel
-- Varje `BookerType` kan sättas
+- Tomt/null/blanksteg i varje textfält → fel
+- `null` som typ → fel
+- Varje booker-typ kan sättas
+- `AssociationRepresentative` utan organisationsnamn → fel
+- Två bookers får olika `Id`
 
 ## Steg 4 – Reservation (skapande)
 **Mål:** Systemet skapar en reservation när en Booker reserverar en Timeslot.
