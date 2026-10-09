@@ -1,4 +1,6 @@
-namespace TE.DomainStorytellingApplied.Domain.Tests;
+using TE.DomainStorytellingApplied.Domain.Timeslots;
+
+namespace TE.DomainStorytellingApplied.Domain.Tests.Timeslots;
 
 public class TimeslotTests
 {

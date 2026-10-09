@@ -2,6 +2,19 @@
 
 Arbetet är uppdelat i steg som följer domänberättelsen. Varje steg ska kunna implementeras och testas för sig innan nästa påbörjas.
 
+## Struktur
+Varje domänbegrepp får en egen mapp och namespace, speglat i testprojektet:
+```
+TE.DomainStorytellingApplied.Domain/
+  Timeslots/Timeslot.cs
+  Premises/...
+  Bookers/...
+  Reservations/...
+TE.DomainStorytellingApplied.Domain.Tests/
+  Timeslots/TimeslotTests.cs
+  ...
+```
+
 ## Steg 1 – Timeslot ✅
 **Mål:** Ett tidsintervall kopplat till en lokal.
 - `Id`, `PremisesId`, `StartTime`, `EndTime`

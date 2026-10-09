@@ -1,4 +1,4 @@
-namespace TE.DomainStorytellingApplied.Domain;
+namespace TE.DomainStorytellingApplied.Domain.Timeslots;
 
 public class Timeslot
 {
